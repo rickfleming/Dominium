@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Dominium.Store.DynamoDb</Title>
+        <Authors>Acqusys</Authors>
+        <Copyright>Copyright (C) 2019 Richard A. Fleming.  All Rights Reserved.</Copyright>
+        <PackageLicenseUrl>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</PackageLicenseUrl>
+        <Description>Domain Aggregate Root Framework - Store - DynamoDB</Description>
+        <RepositoryUrl>https://github.com/rickfleming/Dominium</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.40" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dominium\Dominium.csproj" />
+    </ItemGroup>
+
+</Project>
