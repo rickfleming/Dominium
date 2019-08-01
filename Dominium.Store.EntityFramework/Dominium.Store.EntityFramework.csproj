@@ -9,6 +9,7 @@
         <Description>Domain Aggregate Root Framework - Store - EntityFramework</Description>
         <RepositoryUrl>https://github.com/rickfleming/Dominium</RepositoryUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
