@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.Store.Dapper", "Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.EventPublisher.Obvs", "Dominium.EventPublisher.Obvs\Dominium.EventPublisher.Obvs.csproj", "{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.Store.EntityFramework", "Dominium.Store.EntityFramework\Dominium.Store.EntityFramework.csproj", "{C1800E0F-D0B4-4B40-AEA0-6E6A38F78C18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1800E0F-D0B4-4B40-AEA0-6E6A38F78C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1800E0F-D0B4-4B40-AEA0-6E6A38F78C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1800E0F-D0B4-4B40-AEA0-6E6A38F78C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1800E0F-D0B4-4B40-AEA0-6E6A38F78C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

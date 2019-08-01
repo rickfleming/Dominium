@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Dominium.Store.EntityFramework</Title>
+        <Authors>Acqusys</Authors>
+        <Copyright>Copyright (C) 2019 Richard A. Fleming.  All Rights Reserved.</Copyright>
+        <PackageLicenseUrl>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</PackageLicenseUrl>
+        <Description>Domain Aggregate Root Framework - Store - EntityFramework</Description>
+        <RepositoryUrl>https://github.com/rickfleming/Dominium</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dominium\Dominium.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    </ItemGroup>
+
+</Project>
