@@ -1,26 +1,17 @@
-using System.Collections.Generic;
-
 namespace Dominium
 {
-	public delegate void OnCommitEvent<in T>(T root, ICollection<IDomainEvent> events);
-
-	public abstract class AggregateRoot : IEntity
+	public abstract class Entity : IEntity
 	{
-		private readonly List<IDomainEvent> _events = new List<IDomainEvent>();
+		private IEntity _parent;
 
-		public event OnCommitEvent<AggregateRoot> OnCommit;
-
-		protected virtual void Commit()
-		{
-			OnCommit?.Invoke(this, _events);
-			_events.Clear();
-		}
+		protected Entity(IEntity parent)
+			=> _parent = parent;
 
 		protected virtual void Emit(params IDomainEvent[] events)
 			=> ((IEntity) this).Emit(events);
 
 		void IEntity.Emit(params IDomainEvent[] events)
-			=> _events.AddRange(events);
+			=> _parent.Emit(events);
 	}
 }
 

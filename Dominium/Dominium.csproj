@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Dominium</Title>
         <Authors>Acqusys</Authors>
@@ -9,6 +9,7 @@
         <PackageLicenseUrl>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</PackageLicenseUrl>
         <Description>Domain Aggregate Root Framework</Description>
         <RepositoryUrl>https://github.com/rickfleming/Dominium</RepositoryUrl>
+        <PackageVersion>1.1.0</PackageVersion>
     </PropertyGroup>
 
 </Project>

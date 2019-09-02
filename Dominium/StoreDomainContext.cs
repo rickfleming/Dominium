@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Dominium
@@ -12,23 +13,28 @@ namespace Dominium
 		protected StoreDomainContext(IStore store, IEventPublisher publisher)
 			=> (_store, _publisher) = (store, publisher);
 
-		protected TRoot Init<TRoot>() where TRoot : AggregateRoot
+		protected void Add<T>(T root) where T : AggregateRoot
 		{
-			var root = Activator.CreateInstance<TRoot>();
-			root.OnCommit += async (target, events) => await Save(target, events);
-			return root;
+			_store.Add(root);
+			RegisterRoot(root);
 		}
 		
-		protected async Task<TRoot> Load<TRoot>(params object[] keyValues) where TRoot : AggregateRoot
+		protected async Task<T> Load<T>(params object[] keyValues) where T : AggregateRoot
+			=> RegisterRoot(await _store.Load<T>(keyValues));
+
+		protected async Task<T> Load<T>(Expression<Func<T, bool>> filter) where T : AggregateRoot
+			=> RegisterRoot(await _store.SingleOrDefaultAsync(filter));
+
+		private T RegisterRoot<T>(T root) where T : AggregateRoot
 		{
-			var root = await _store.Load<TRoot>(keyValues);
-			root.OnCommit += async (target, events) => await Save(target, events);
+			if(root != null)
+				root.OnCommit += async (target, events) => await Commit(events);
 			return root;
 		}
 
-		private async Task Save<TRoot>(TRoot root, ICollection<IDomainEvent> events) where TRoot: AggregateRoot
+		private async Task Commit(IEnumerable<IDomainEvent> events)
 		{
-			await _store.Save(root);
+			await _store.Commit();
 			await _publisher.PublishAll(events);
 		}
 	}

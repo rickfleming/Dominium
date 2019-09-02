@@ -2,11 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium", "Dominium\Dominium.csproj", "{62F4DF5F-B746-4C60-A879-0944699D01C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.Store.DynamoDb", "Dominium.Store.DynamoDb\Dominium.Store.DynamoDb.csproj", "{6BA9C5DD-0FD7-46D1-98C7-BB845E4BB49B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.Bus.Redis", "Dominium.Bus.Redis\Dominium.Bus.Redis.csproj", "{D5BB6302-24E3-4199-B247-E360A1A14CBA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.Store.Dapper", "Dominium.Store.Dapper\Dominium.Store.Dapper.csproj", "{9F8288A7-BC8F-42CD-80DE-C0749E2278A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominium.EventPublisher.Obvs", "Dominium.EventPublisher.Obvs\Dominium.EventPublisher.Obvs.csproj", "{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}"
 EndProject
@@ -22,18 +18,10 @@ Global
 		{62F4DF5F-B746-4C60-A879-0944699D01C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F4DF5F-B746-4C60-A879-0944699D01C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F4DF5F-B746-4C60-A879-0944699D01C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BA9C5DD-0FD7-46D1-98C7-BB845E4BB49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BA9C5DD-0FD7-46D1-98C7-BB845E4BB49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BA9C5DD-0FD7-46D1-98C7-BB845E4BB49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BA9C5DD-0FD7-46D1-98C7-BB845E4BB49B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5BB6302-24E3-4199-B247-E360A1A14CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5BB6302-24E3-4199-B247-E360A1A14CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5BB6302-24E3-4199-B247-E360A1A14CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5BB6302-24E3-4199-B247-E360A1A14CBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F8288A7-BC8F-42CD-80DE-C0749E2278A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F8288A7-BC8F-42CD-80DE-C0749E2278A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F8288A7-BC8F-42CD-80DE-C0749E2278A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F8288A7-BC8F-42CD-80DE-C0749E2278A7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1769A1FD-FCFC-45BC-BECB-444D0CF7D160}.Release|Any CPU.ActiveCfg = Release|Any CPU

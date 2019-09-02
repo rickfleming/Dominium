@@ -1,11 +1,17 @@
+using System;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Dominium
 {
 	public interface IStore
 	{
-		Task<TRoot> Load<TRoot>(params object[] keyValues) where TRoot : class;
-		Task Save<TRoot>(TRoot root) where TRoot : class;
+		void Add<T>(T root) where T : AggregateRoot;
+		IQueryable<T> Query<T>() where T : AggregateRoot;
+		Task<T> SingleOrDefaultAsync<T>(Expression<Func<T, bool>> filter) where T : AggregateRoot;
+		Task<TRoot> Load<TRoot>(params object[] keyValues) where TRoot : AggregateRoot;
+		Task Commit();
 	}
 }
 

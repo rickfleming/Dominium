@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,16 +12,23 @@ namespace Dominium.Store.EntityFramework
 
 		public EntityFrameworkStore(DbContext ctx) => _ctx = ctx;
 		
-		public async Task<TRoot> Load<TRoot>(params object[] keyValues) where TRoot : class
+		public async Task<TRoot> Load<TRoot>(params object[] keyValues) where TRoot : AggregateRoot
 			=> await _ctx.FindAsync<TRoot>(keyValues);
 
-		public async Task Save<TRoot>(TRoot root) where TRoot : class
+		public IQueryable<TRoot> Query<TRoot>() where TRoot : AggregateRoot
+			=> _ctx.Query<TRoot>();
+
+		public async Task<T> SingleOrDefaultAsync<T>(Expression<Func<T, bool>> filter) where T : AggregateRoot
+			=> await _ctx.Query<T>().SingleOrDefaultAsync(filter);
+
+		public void Add<TRoot>(TRoot root) where TRoot : AggregateRoot
 		{
 			if (_ctx.Set<TRoot>().Local.All(e => e != root))
 				_ctx.Add(root);
-			
-			await _ctx.SaveChangesAsync();
 		}
+
+		public async Task Commit()
+			=> await _ctx.SaveChangesAsync();
 	}
 }
 
